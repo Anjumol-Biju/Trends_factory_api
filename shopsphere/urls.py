@@ -36,5 +36,9 @@ urlpatterns = [
     path('api/v1/carts/',views.CartListView.as_view()),
     
     path("api/v1/carts/<int:pk>/",views.CartItemUpdateView.as_view()),
+    
+    path("api/v1/order/",views.CheckOutView.as_view()),
+    
+    path("api/v1/order/summary/",views.OrderSummaryView.as_view()),
 
 ]

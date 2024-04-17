@@ -137,12 +137,13 @@
 
             "delivery_address":"delivery address",
 
-            "phone":"your phoine number",
+            "phone":"your phone number",
 
             "email":"your email",
 
             "payment_mode":"payment method"
-            "pin" : "pin"
+
+            "pin" : "your pin"
 
         }
 

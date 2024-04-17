@@ -385,6 +385,16 @@ class Order(models.Model):
     updated_date = models.DateTimeField(auto_now=True)
 
     is_active = models.BooleanField(default=True)
+    
+    @property
+    def order_total(self):
+        
+        basket_items=self.basket_item_objects.all()
+        total=sum([bi.item_total for bi in basket_items]) if basket_items else 0
+        print("total,,,,,,,,",total)
+        return total
+        
+        
 
 
 

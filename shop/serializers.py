@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
 
-from shop.models import Product,Category,Brand,Size,Basket,BasketItem
+from shop.models import Product,Category,Brand,Size,Basket,BasketItem,Order
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -101,3 +101,15 @@ class BasketSerializer(serializers.ModelSerializer):
                 "basketitems",
                 "basket_total"
             ]
+        
+class OrderSerializer(serializers.ModelSerializer):
+    
+    order_total=serializers.CharField(read_only=True)
+    
+    basket_item_objects=BasketItemSerializer(many=True,read_only=True)
+    
+    class Meta:
+        
+        model=Order
+
+        fields="__all__"
